@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useAuth } from '@/context/AuthContext';
 import { useRouter } from 'next/navigation';
+import ThemeToggle from '@/components/ThemeToggle';
 
 const features = [
   {
@@ -74,6 +75,7 @@ export default function HomePage() {
           <span style={{ fontSize: '20px', fontWeight: 700, color: '#f1f5f9' }}>AgriSync<span style={{ color: '#22c55e' }}>AI</span></span>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <ThemeToggle />
           <Link href="/login" style={{
             padding: '10px 24px', borderRadius: '10px',
             color: '#94a3b8', fontSize: '14px', fontWeight: 600,

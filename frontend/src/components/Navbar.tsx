@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { useAuth } from '@/context/AuthContext';
+import ThemeToggle from './ThemeToggle';
 
 export default function Navbar() {
     const { user, logout } = useAuth();
@@ -37,6 +38,9 @@ export default function Navbar() {
 
             {/* Right side - User actions */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                {/* Theme Toggle */}
+                <ThemeToggle />
+
                 {/* Notifications bell */}
                 <button style={{
                     position: 'relative', background: 'rgba(30,41,59,0.6)',

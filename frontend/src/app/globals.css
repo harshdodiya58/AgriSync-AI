@@ -53,6 +53,59 @@
   --info: #0EA5E9;
 }
 
+/* Light Theme */
+[data-theme="light"] {
+  /* Light Background Colors */
+  --bg-primary: #F8FAFC;
+  --bg-secondary: #F1F5F9;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #F8FAFC;
+
+  /* Light Mode Primary Colors */
+  --electric-blue: #0284C7;
+  --electric-blue-light: #0EA5E9;
+  --electric-blue-dark: #0369A1;
+
+  --deep-purple: #7C3AED;
+  --deep-purple-light: #8B5CF6;
+  --deep-purple-dark: #6D28D9;
+
+  --vibrant-orange: #EA580C;
+  --vibrant-orange-light: #F97316;
+  --vibrant-orange-dark: #C2410C;
+
+  --emerald-green: #059669;
+  --emerald-green-light: #10B981;
+  --emerald-green-dark: #047857;
+
+  /* Light Mode Accent Colors */
+  --hot-pink: #DB2777;
+  --hot-pink-light: #EC4899;
+
+  --cyan-accent: #0891B2;
+  --cyan-light: #06B6D4;
+
+  --amber-warning: #D97706;
+  --amber-light: #F59E0B;
+
+  /* Light Mode Text Colors */
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #64748B;
+  --text-dim: #94A3B8;
+
+  /* Light Mode Border Colors */
+  --border-color: #E2E8F0;
+  --border-light: #CBD5E1;
+  --border-bright: #94A3B8;
+
+  /* Light Mode Status Colors */
+  --danger: #DC2626;
+  --warning: #D97706;
+  --success: #059669;
+  --info: #0284C7;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -549,4 +602,107 @@ body {
 
 .count-up {
   animation: count-up 0.6s ease-out;
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(14, 165, 233, 0.1);
+  border: 2px solid rgba(14, 165, 233, 0.2);
+  border-radius: 10px;
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-toggle-btn:hover {
+  background: rgba(14, 165, 233, 0.2);
+  border-color: rgba(14, 165, 233, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+}
+
+.theme-toggle-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle-btn:hover .theme-toggle-icon {
+  transform: rotate(20deg) scale(1.1);
+}
+
+.theme-toggle-text {
+  font-size: 13px;
+  letter-spacing: 0.02em;
+}
+
+/* Light theme specific adjustments */
+[data-theme="light"] .glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(14, 165, 233, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .glass-card:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(14, 165, 233, 0.3);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .gradient-mesh {
+  background:
+    radial-gradient(ellipse at 10% 20%, rgba(14, 165, 233, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 90% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(249, 115, 22, 0.05) 0%, transparent 70%);
+}
+
+[data-theme="light"] .kpi-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.98));
+  border: 2px solid rgba(14, 165, 233, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .kpi-card:hover {
+  box-shadow: 0 12px 32px rgba(14, 165, 233, 0.15);
+}
+
+[data-theme="light"] .form-input,
+[data-theme="light"] .form-select {
+  background: rgba(248, 250, 252, 0.8);
+  border-color: var(--border-light);
+}
+
+[data-theme="light"] .form-input:focus,
+[data-theme="light"] .form-select:focus {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+[data-theme="light"] .chart-container {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .sidebar-link:hover {
+  background: rgba(14, 165, 233, 0.08);
+}
+
+[data-theme="light"] .sidebar-link.active {
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.15), rgba(139, 92, 246, 0.1));
+  box-shadow: 0 2px 8px rgba(14, 165, 233, 0.1);
+}
+
+/* Smooth theme transition */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
